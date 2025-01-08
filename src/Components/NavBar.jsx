@@ -59,12 +59,12 @@ const NavBar = () => {
               <Link>Cart</Link>
             </li>
             <li>
-              <Link>Profile</Link>
+              <Link to={'/Profile'}>Profile</Link>
             </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn btn-warning text-white">Login</a>
+        <Link to={'/Login'} className="btn btn-warning text-white">Login</Link>
       </div>
     </div>
   );

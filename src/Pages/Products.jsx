@@ -5,7 +5,7 @@ import ProductCard from "../Components/ProductCard/ProductCard";
 const Products = () => {
     const glasses = useLoaderData();
     return (
-        <div className="grid lg:grid-cols-3 grid-cols-1 gap-6">
+        <div className="grid lg:grid-cols-3 mt-6 grid-cols-1 gap-6">
             {
                 glasses.map((glass, index) => <ProductCard key={index} glass={glass}></ProductCard>)
             }
