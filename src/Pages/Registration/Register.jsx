@@ -1,11 +1,31 @@
+import { useContext } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Register = () => {
+  const {createUser} = useContext(AuthContext);
+
+  const handleRegister = e => {
+    e.preventDefault()
+    const form = new FormData(e.currentTarget);
+    const name = form.get('name')
+    const email = form.get('email')
+    const password = form.get('password');
+    console.log(name, email, password);
+    createUser(email, password)
+    .then(result => {
+      console.log(result.user);
+    })
+    .catch(error => console.error(error)
+    )
+  }
+
+  
   return (
     <div className="flex border-2 mt-6 bg-base-100 rounded-lg max-w-xl mx-auto  font-montserrat justify-center ">
       <form
-        // onSubmit={handleRegister}
+        onSubmit={handleRegister}
         className="max-w-lg w-full px-6 py-8 mx-auto"
       >
         <div className="mb-6">

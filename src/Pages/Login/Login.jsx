@@ -1,10 +1,25 @@
+import { useContext, useState } from "react";
 import { FaGithub } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
+  const navigate = useNavigate()
+  const {login} = useContext(AuthContext)
+  const [showPass, setShowPass] = useState(false)
+  const handleLogin = (e) =>{
+    e.preventDefault()
+    const form = new FormData(e.currentTarget)
+    const email = form.get('email')
+    const password = form.get('password')
+    console.log(email, password);
+    login(email, password)
+    navigate('/')
+  }
+  
   return (
     <div className="flex border-2 mt-6 bg-base-100 rounded-lg max-w-xl mx-auto  font-montserrat justify-center ">
-      <form  className="max-w-lg w-full p-6 mx-auto">
+      <form onSubmit={handleLogin} className="max-w-lg w-full p-6 mx-auto">
         <div className="mb-6">
           <h3 className="text-gray-800 text-2xl font-bold">Login</h3>
         </div>
@@ -60,14 +75,13 @@ const Login = () => {
             <div className="relative flex items-center">
               <input
                 name="password"
-                // type={showPass ? "text" : "password"}
-                type="password"
+                type={showPass ? "text" : "password"}
                 required
                 className="w-full text-sm text-gray-800 border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                 placeholder="Enter password"
               />
               <svg
-                // onClick={() => setShowPass(!showPass)}
+                onClick={() => setShowPass(!showPass)}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="#bbb"
                 stroke="#bbb"
