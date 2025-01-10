@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 const ProductCard = ({glass}) => {
     const {name, image, description, price} = glass;
   return (
-    <div className="card bg-base-100 w-96 border-2 shadow-xl">
+    <div className="card bg-base-100 w-96  shadow-xl">
       <figure className="px-10 pt-10">
         <img
           src={image}

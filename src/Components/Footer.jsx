@@ -88,7 +88,7 @@ const Footer = () => {
             </li>
           </ul>
       
-          <p className="text-base text-gray-300">© ReadymadeUI. All rights reserved.</p>
+          <p className="text-base text-gray-300">©<span className='text-warning'>SLASH</span> Glasses. All rights reserved.</p>
         </div>
       </footer>
       

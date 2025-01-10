@@ -5,7 +5,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
   const navigate = useNavigate()
-  const {login} = useContext(AuthContext)
+  const {login, googleLogin} = useContext(AuthContext)
   const [showPass, setShowPass] = useState(false)
   const handleLogin = (e) =>{
     e.preventDefault()
@@ -15,6 +15,16 @@ const Login = () => {
     console.log(email, password);
     login(email, password)
     navigate('/')
+  }
+
+  const handleGoogleLogin = () =>{
+    googleLogin()
+    .then(result => {
+      console.log(result.user)
+      navigate('/')
+    })
+    .catch(error => console.error(error)
+    )
   }
   
   return (
@@ -139,6 +149,8 @@ const Login = () => {
 
         <div className="space-y-3">
           <button
+            // onClick={googleLogin}
+            onClick={handleGoogleLogin}
             type="button"
             className="w-full flex items-center justify-center gap-4 py-2.5 px-4 text-sm tracking-wide text-gray-800 border border-gray-300 rounded-full         bg-transparent hover:bg-gray-50 focus:outline-none"
           >

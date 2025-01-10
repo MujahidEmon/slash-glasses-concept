@@ -33,9 +33,9 @@ const NavBar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu font-semibold menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
-            <li>
+            <li className="">
               <Link to={'/'}>Home</Link>
             </li>
             <li>
@@ -52,10 +52,10 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <Link to={'/'} className="font-bold lg:text-2xl text-xl "><span className="text-warning">SLASH</span> Glasses</Link>
+        <Link to={'/'} className="font-bold lg:text-4xl text-xl "><span className="text-warning">SLASH</span> Glasses</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu font-semibold menu-horizontal px-1">
         <li>
               <Link to={'/'}>Home</Link>
             </li>

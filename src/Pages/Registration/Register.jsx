@@ -149,20 +149,7 @@ const Register = () => {
           </div>
         </div>
 
-        <div className="my-4 flex items-center gap-4">
-          <hr className="w-full border-gray-300" />
-          <p className="text-sm text-gray-800 text-center">or</p>
-          <hr className="w-full border-gray-300" />
-        </div>
-
-        <div className=" flex items-center gap-6 justify-center">
-          <button className="btn btn-circle">
-            <FaGoogle size={30}></FaGoogle>
-          </button>
-          <button className="btn btn-circle">
-            <FaGithub size={30}></FaGithub>
-          </button>
-        </div>
+       
       </form>
     </div>
   );
